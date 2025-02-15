@@ -32,5 +32,14 @@ src ├── main │ └── java │ └── pages │ └── BasePage
    ```bash
    git clone https://github.com/asafah83/KalDemo-project.git
 
+2. **Navigate to the project directory**:
+   cd KalDemo-project
+
+3. **Run tests with Maven**:
+   mvn clean test
+
+   
+
+
 
 
