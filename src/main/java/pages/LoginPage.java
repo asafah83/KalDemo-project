@@ -24,7 +24,7 @@ public class LoginPage extends BasePage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public void login(String userNameValue, String passwordValue) throws InterruptedException {
+    public void loginToWebsite(String userNameValue, String passwordValue) throws InterruptedException {
         fillText(userNameField, userNameValue);
         fillText(passwordField, passwordValue);
         waitHelper(By.xpath("//span[contains(text(),'התחברות')]"));
@@ -33,7 +33,7 @@ public class LoginPage extends BasePage {
 
     @Step("Login using the test user credentials")
     public void loginUsingValidUserDetails() throws InterruptedException {
-        login("tester", "tester123!@#qwe");
+        loginToWebsite("tester", "tester123!@#qwe");
     }
 
 }

@@ -30,7 +30,6 @@ public class BaseTest {
         options.addArguments("--start-maximized"); // פתיחה במסך מלא
         options.addArguments("--disable-notifications"); // השבתת התראות
         options.addArguments("--disable-save-password-bubble"); // ביטול שמירת סיסמאות
-        options.addArguments("--disable-save-password-bubble");
         options.addArguments("--disable-popup-blocking");
         options.addArguments("--disable-infobars");
         options.addArguments("--disable-autofill");
