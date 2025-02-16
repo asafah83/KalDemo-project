@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.Utils;
 
 import java.time.Duration;
 
@@ -32,8 +33,10 @@ public class LoginPage extends BasePage {
     }
 
     @Step("Login using the test user credentials")
-    public void loginUsingValidUserDetails() throws InterruptedException {
-        loginToWebsite("tester", "tester123!@#qwe");
+    public void loginWithCredentialsFromConfig() throws InterruptedException {
+        String username = Utils.readProperty("username");
+        String password = Utils.readProperty("password");
+        loginToWebsite(username, password);
     }
 
 }

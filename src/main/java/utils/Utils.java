@@ -1,16 +1,13 @@
 package utils;
 
-import org.testng.annotations.DataProvider;
-
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
 
 public class Utils {
-
     public static String readProperty(String key) {
 
-        String value="";
+        String value = "";
         try (InputStream input = new FileInputStream("./src/main/resources/data/configuration.properties")) {
             Properties prop = new Properties();
 
