@@ -30,6 +30,7 @@ The project includes:
 ---
 
 ## 🛠️ Project Structure
+```
 src
  └─ main
      └─ java
@@ -51,7 +52,7 @@ src
 resources
  └─ data
      └─ config.properties
-
+```
 
 
 ---
