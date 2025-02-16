@@ -11,6 +11,15 @@ The project includes:
 
 ---
 
+### 🛠️ **Project Structure Overview**
+
+- **pages/** – מכיל את כל דפי המערכת (Page Object Model).  
+- **publishAdWizard/** – תתי-עמודים השייכים לאשף פרסום מודעות.  
+- **utils/** – פונקציות עזר לניהול WebDriver, קריאת פרופרטיז, ועוד.  
+- **tests/** – בדיקות אוטומטיות עם TestNG.  
+- **resources/data/** – הגדרות וקבצי נתוני בדיקה.  
+
+
 ## ⚙️ Tech Stack
 - 🛠️ **Java**: Core language for automation.
 - 🌐 **Selenium WebDriver**: For browser automation.
