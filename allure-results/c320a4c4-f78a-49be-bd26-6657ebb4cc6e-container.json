@@ -1,0 +1,1 @@
+{"uuid":"c320a4c4-f78a-49be-bd26-6657ebb4cc6e","name":"tests.BaseTest.tearDown","children":["ec91bb2c-0995-418b-9a7f-dc020fb70064"],"description":"","befores":[],"afters":[{"name":"tearDown","status":"broken","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1739468734934,"stop":1739468734934}],"start":1739468734934,"stop":1739468734934}
