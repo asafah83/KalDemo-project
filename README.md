@@ -21,7 +21,28 @@ The project includes:
 ---
 
 ## 🛠️ Project Structure
-src ├── main │ └── java │ └── pages │ └── BasePage.java │ └── LoginPage.java │ └── StepOnePage.java │ └── StepTwoPage.java │ └── utils │ └── WaitUtils.java ├── test │ └── java │ └── tests │ └── E2ETest.java └── resources └── config.properties
+src
+ └─ main
+     └─ java
+         ├─ pages
+         │    ├─ BasePage.java
+         │    ├─ LoginPage.java
+         │    └─ publishAdWizard
+         │         ├─ StepOnePage.java
+         │         └─ StepTwoPage.java
+         │
+         └─ utils
+              ├─ WaitUtils.java
+              └─ DriverFactory.java
+ └─ test
+     └─ java
+         └─ tests
+             ├─ E2ETest.java
+             └─ LoginTest.java
+resources
+ └─ data
+     └─ config.properties
+
 
 
 ---
