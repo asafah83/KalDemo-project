@@ -1,3 +1,4 @@
+
 package pages;
 
 import io.qameta.allure.Step;
@@ -17,6 +18,7 @@ public class BasePage {
     public BasePage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
         // we will add, into the constructor, the page factory, once.
         PageFactory.initElements(driver, this);
     }
@@ -69,7 +71,7 @@ public class BasePage {
         List<WebElement> list = driver.findElements(By.xpath(element));
         for (WebElement el : list) {
             waitForElement(el);
-            if (el.getText().equalsIgnoreCase(textValue)) {
+            if (el.getText().equals(textValue)) {
                 click(el);
                 break;
             }
@@ -150,4 +152,3 @@ public class BasePage {
         click(topConnectButton);
     }
 }
-

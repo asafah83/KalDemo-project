@@ -15,17 +15,13 @@ public class Step5_page extends BasePage {
     @FindBy(xpath = "(//button[contains(text(),'הבא')])[5]")
     WebElement next5Button;
 
-
     public Step5_page(WebDriver driver) throws InterruptedException {
         super(driver);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-
     @Step("Uploading an image file for the asset")
     public void uploadImage(String filePath) {
-        // איתור שדה ההעלאה לפי ה-ID שלו
-        // שליחת הנתיב של הקובץ ישירות לתוך ה-input[type='file']
         input.sendKeys(filePath);
     }
 

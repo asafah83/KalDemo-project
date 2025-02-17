@@ -17,7 +17,7 @@ public class Step6_page extends BasePage {
     @FindBy(css = "[type='submit']")
     WebElement publishAssetButton;
 
-    public Step6_page(WebDriver driver) throws InterruptedException {
+    public Step6_page(WebDriver driver) {
         super(driver);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }

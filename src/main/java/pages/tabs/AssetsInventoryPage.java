@@ -13,17 +13,17 @@ import java.util.List;
 public class AssetsInventoryPage extends BasePage {
     private int initialAdCount;
 
-    public AssetsInventoryPage(WebDriver driver) throws InterruptedException {
+    public AssetsInventoryPage(WebDriver driver) {
         super(driver);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     @Step("Count the number of the Ads")
-    public int getInitialAdCount() {
-
-        List<WebElement> adsNumber = driver.findElements(By.xpath("//div[contains(@class,'jet-listing-grid_item')]"));
-        System.out.println("Number of Ads is: " + adsNumber.size());
-        return adsNumber.size();
+    public void countAdsBefore() {
+        WebElement countElementBefore = driver.findElement(By.cssSelector("[class='jet-engine-query-count query-2 count-type-total']"));
+        String text = countElementBefore.getText();
+        initialAdCount = Integer.parseInt(text.trim());
+        System.out.println("📊 The Ads number before the new created Ad: " + initialAdCount);
     }
     @Step("Testing if the new created Ad was added successfully to Ads list, in the main page")
     public void verifyAdAdded() {

@@ -11,6 +11,15 @@ The project includes:
 
 ---
 
+### 🛠️ **Project Structure Overview**
+
+- **pages/** – מכיל את כל דפי המערכת (Page Object Model).
+- **publishAdWizard/** – תתי-עמודים השייכים לאשף פרסום מודעות.
+- **utils/** – פונקציות עזר לניהול WebDriver, קריאת פרופרטיז, ועוד.
+- **tests/** – בדיקות אוטומטיות עם TestNG.
+- **resources/data/** – הגדרות וקבצי נתוני בדיקה.
+
+
 ## ⚙️ Tech Stack
 - 🛠️ **Java**: Core language for automation.
 - 🌐 **Selenium WebDriver**: For browser automation.
@@ -21,7 +30,29 @@ The project includes:
 ---
 
 ## 🛠️ Project Structure
-src ├── main │ └── java │ └── pages │ └── BasePage.java │ └── LoginPage.java │ └── StepOnePage.java │ └── StepTwoPage.java │ └── utils │ └── WaitUtils.java ├── test │ └── java │ └── tests │ └── E2ETest.java └── resources └── config.properties
+```
+src
+ └─ main
+     └─ java
+         ├─ pages
+         │    ├─ BasePage.java
+         │    ├─ LoginPage.java
+         │    └─ publishAdWizard
+         │         ├─ StepOnePage.java
+         │         └─ StepTwoPage.java
+         │
+         └─ utils
+              ├─ WaitUtils.java
+              └─ DriverFactory.java
+ └─ test
+     └─ java
+         └─ tests
+             ├─ E2ETest.java
+             └─ LoginTest.java
+resources
+ └─ data
+     └─ config.properties
+```
 
 
 ---
@@ -38,10 +69,9 @@ src ├── main │ └── java │ └── pages │ └── BasePage
 
 3. **Run tests with Maven**:
   ```bash
-  mvn clean test
+   mvn clean test
 
    
-
 
 
 

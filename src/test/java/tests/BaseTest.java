@@ -10,6 +10,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 import pages.BasePage;
 import pages.LoginPage;
+import utils.DriverFactory;
 import utils.Utils;
 
 import java.io.File;
@@ -22,32 +23,15 @@ public class BaseTest {
 
     @BeforeMethod
     public void setup() throws InterruptedException {
-        driver = new ChromeDriver();
-
-        // Set the Browser settings to prevent Chrome pop
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito"); // הפעלת מצב אינקוגניטו
-        options.addArguments("--start-maximized"); // פתיחה במסך מלא
-        options.addArguments("--disable-notifications"); // השבתת התראות
-        options.addArguments("--disable-save-password-bubble"); // ביטול שמירת סיסמאות
-        options.addArguments("--disable-save-password-bubble");
-        options.addArguments("--disable-popup-blocking");
-        options.addArguments("--disable-infobars");
-        options.addArguments("--disable-autofill");
-
-        // Shutdown the Autofill and storing passwords in Profile level
-        options.setExperimentalOption("prefs", java.util.Map.of(
-                "autofill.profile_enabled", false,
-                "credentials_enable_service", false,
-                "profile.password_manager_enabled", false
-        ));
+        String browser = Utils.readProperty("browser");
+        driver = DriverFactory.createDriver(browser);
         driver.manage().window().maximize();
         driver.get(Utils.readProperty("url"));
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         handlePopup();
         LoginPage lp = new LoginPage(driver);
-        lp.loginUsingValidUserDetails();
+        lp.loginWithCredentialsFromConfig();
     }
     public void sleep(int miliSecond) throws InterruptedException {
         Thread.sleep(miliSecond);
@@ -82,7 +66,6 @@ public class BaseTest {
 
     public void handlePopup() throws InterruptedException {
         BasePage bs = new BasePage(driver);
-    //    bs.clearCookiesAndCache();
         bs.handlingWelcomeHomPopUp();
         bs.clickThePrimaryConnect();
     }
